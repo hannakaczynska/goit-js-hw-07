@@ -15,15 +15,8 @@ const galleryGrid = galleryItems
   .join('');
 
 gallery.insertAdjacentHTML('beforeend', galleryGrid);
-gallery.addEventListener('click', openModal);
 
-function openModal(e) {
-  e.preventDefault();
-  if (!e.target.classList.contains('gallery__image')) {
-    return;
-  }
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: '250ms',
-  });
-}
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: '250ms',
+});
